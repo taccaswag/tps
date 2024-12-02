@@ -53,11 +53,14 @@
             let array = matrice.split(",")
             console.log(array);
             const tabella = document.getElementById("tabella");
+
             for(let j = 0; j < (matrice.length-1)/7; j++){
                 let nuovaRiga = "<tr>";
+
                 for (let i = 1; i <7 ; i++) {
-                    nuovaRiga += "<td>"+arrayDati[i]+"</td>";
+                    nuovaRiga += "<td>"+array[i]+"</td>";
                 }
+
                 nuovaRiga += "</tr>";
                 tabella.innerHTML += nuovaRiga;
             }
@@ -72,3 +75,6 @@
 
 </body>
 </html>
+
+
+
