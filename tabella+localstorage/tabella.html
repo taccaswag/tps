@@ -4,16 +4,16 @@
     <title>Modulo Di Registrazione</title>
     <style>
         body {
-            font-family: Helvetica, Arial, sans-serif;
-            background-color: #78ebff;
+            font-family: "Times New Roman";
+            background-color: #8deeff;
         }
         .output {
             margin-top: 40px;
         }
         table {
             width: 100%;
-            border-collapse: collapse;
             margin-top: 20px;
+            border: 2px double black;
         }
         th, td {
             border: 1px solid #000000;
@@ -57,7 +57,9 @@
         <label for="paese">Nazione:</label>
         <input type="text" id="paese" name="paese" required><br><br>
 
-        <button type="button" onclick="mostraValori()">Invia</button>
+        <button type="button" onclick="mostraValori()">Mostra</button>
+        <button type="button" onclick="inviaValori()">Invia</button>
+
     </form>
 
     <table id="tabella">
@@ -73,6 +75,7 @@
     </table>
 
     <script>
+        let anagrafica = [[]];
         function mostraValori() {
             const dati = document.getElementById('formRegistrazone');
             const arrayDati = [dati.cognome.value, dati.nome.value , dati.sesso.value, dati.indirizzo.value, dati.citta.value, dati.codicepostale.value, dati.paese.value ];
@@ -86,11 +89,19 @@
             nuovaRiga += "</tr>";
 
             tabella.innerHTML += nuovaRiga;
+            
+            anagrafica.push(arrayDati);
+            console.log(anagrafica);
+
 
             dati.reset();
+        }
+
+        function inviaValori() {
+            localStorage.setItem("datiRegistrazione", anagrafica);
+            location.href="https://taccaswag.github.io/tps/tabella+localstorage/ricevitore.html";
         }
     </script>
 
 </body>
 </html>
-
