@@ -32,12 +32,39 @@
     </style>
 </head>
 <body>
+    <h1>DATI REGISTRATI</h1>
+    <table id="tabella">
+        <tr>
+            <th>Cognome</th>
+            <th>Nome</th>
+            <th>Sesso</th>
+            <th>Indirizzo</th>
+            <th>Città</th>
+            <th>CAP</th>
+            <th>Nazione</th>
+        </tr>
+    </table>
+
         <button type="button" onclick="tornaIndietro()">Torna alla pagina precedente</button>
         <button type="button" onclick="mostraDati()">Mostra dati</button>
 
     <script>
+
+        let matrice = localStorage.getItem("datiRegistrazione")
+
         function mostraDati(){
-            let tabella = document
+            let array = matrice.split(",")
+            console.log(array);
+            const tabella = document.getElementById("tabella");
+
+            let nuovaRiga = "<tr>";
+            for(let i = 0; i < (matrice.length-1)/7; i++)
+            for (let i = 1; i <matrice.length ; i++) {
+                nuovaRiga += "<td>"+arrayDati[i]+"</td>";
+            }
+            nuovaRiga += "</tr>";
+
+            tabella.innerHTML += nuovaRiga;
         }
       
         function tornaIndietro() {
