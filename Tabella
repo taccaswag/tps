@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modulo Di Registrazione</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #78ebff;
+            text-align: center;
+        }
+        .output {
+            margin-top: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #000000;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #00e1ff;
+        }
+        input {
+            background-color:#9eeffa;
+        }
+        button{
+            background-color:#bebebe;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MODULO DI REGISTRAZIONE</h1>
+    
+    <form id="formRegistrazone">
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" name="cognome" required><br><br>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="sesso">Sesso:</label>
+        <input type="text" id="sesso" name="sesso" required><br><br>
+
+        <label for="indirizzo">Indirizzo:</label>
+        <input type="text" id="indirizzo" name="indirizzo" required><br><br>
+
+        <label for="citta">Città:</label>
+        <input type="text" id="citta" name="citta" required><br><br>
+
+        <label for="codicepostale">CAP:</label>
+        <input type="text" id="codicepostale" name="codicepostale" required><br><br>
+
+        <label for="paese">Nazione:</label>
+        <input type="text" id="paese" name="paese" required><br><br>
+
+        <button type="button" onclick="mostraValori()">Invia</button>
+    </form>
+
+    <table id="tabella">
+        <tr>
+            <th>Cognome</th>
+            <th>Nome</th>
+            <th>Sesso</th>
+            <th>Indirizzo</th>
+            <th>Città</th>
+            <th>CAP</th>
+            <th>Nazione</th>
+        </tr>
+    </table>
+
+    <script>
+        function mostraValori() {
+            const dati = document.getElementById('formRegistrazone');
+            const arrayDati = [dati.cognome.value, dati.nome.value , dati.sesso.value, dati.indirizzo.value, dati.citta.value, dati.codicepostale.value, dati.paese.value ];
+
+            const tabella = document.getElementById("tabella");
+
+            let nuovaRiga = "<tr>";
+            for (let i = 0; i < arrayDati.length; i++) {
+                nuovaRiga += "<td>"+arrayDati[i]+"</td>";
+            }
+            nuovaRiga += "</tr>";
+
+            tabella.innerHTML += nuovaRiga;
+
+            dati.reset();
+        }
+    </script>
+
+</body>
+</html>
+
