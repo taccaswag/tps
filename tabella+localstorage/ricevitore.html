@@ -50,14 +50,15 @@
         let matrice = localStorage.getItem("datiRegistrazione")
 
         function mostraDati(){
-            
+            let array = matrice.split(",");
+            console.log(array);
             const tabella = document.getElementById("tabella");
 
             for(let j = 0; j < (matrice.length-1)/8; j++){
                 let nuovaRiga = "<tr>";
 
                 for (let i = 0; i < 8 ; i++) {
-                    nuovaRiga += "<td>"+matrice[i*(j+1)]+"</td>";
+                    nuovaRiga += "<td>"+array[i+(j*8)]+"</td>";
                 }
 
                 nuovaRiga += "</tr>";
@@ -71,9 +72,5 @@
 
 
     </script>
-
-</body>
-</html>
-
 
 
