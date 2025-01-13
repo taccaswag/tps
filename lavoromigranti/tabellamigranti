@@ -1,1 +1,111 @@
+<html>
+  <!DOCTYPE html>
+  <style>
+    body {
+        font-family: "Arial", sans-serif;
+        background-color: rgba(238, 230, 230, 0.4);
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;  
+    }
+      
+    
+    h1 {
+      font-size: 40px;
+      color: #000000;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    input[type="file"] {
+      padding: 10px;
+      font-size: 1em;
+      margin-bottom: 20px;
+      background-color: #cdcdcd;
+      border: 1px solid #000000;
+      margin-left: 41%;
+    }
+    .output {
+      width: 13.5%;
+      background-color: #cdcdcd;
+      padding: 50px;
+      margin-left: 41%;
+      border: 1px solid #000000;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 2px;
+      color: #333;
+      margin: 0 auto; /* Centra la tabella */
+    }
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+      color: #333;
+      font-weight: bold;
+    }
+
+    td {
+      background-color: #fafafa;
+    }
+
+    td:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+  <script>
+    //funzione di lettura del file
+    function leggiFile(input) {
+      let file = input.files[0]; //presa in input del file
+      let lettoreF = new FileReader(); //creazione oggetto filereader
+      lettoreF.readAsText(file);
+
+      lettoreF.onload = function () {
+        let contenuto = lettoreF.result; // Contenuto del file letto
+        creaTab(contenuto); // Crea la tabella
+      };
+    }
+
+    //funzione per la creazione della tabella
+    function creaTab(tab) {
+      let tabella = document.createElement("table");
+      let newRighe;
+      let arrayT = tab.split("\n");
+      // console.log(arrayT);
+      let NColonne;
+
+      for (let riga = 0; riga < arrayT.length; riga++) {
+        newRighe = document.createElement("tr");
+        Ncolonne = arrayT[riga].split(",");
+        for (let colonna = 0; colonna < Ncolonne.length; colonna++) {
+          let contenuto = document.createElement("td");
+          contenuto.textContent = Ncolonne[colonna];
+          newRighe.appendChild(contenuto);
+        }
+        tabella.appendChild(newRighe);
+      }
+
+      let outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = "";
+      outputDiv.appendChild(tabella);
+    }
+  </script>
+
+  <body>
+    <h1>Tabella Migranti</h1>
+    <input type="file" onchange="leggiFile(this)" />
+
+    <div id="output" class="output"></div>
+  </body>
+</html>
 
