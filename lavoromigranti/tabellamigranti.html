@@ -38,7 +38,7 @@
       border-collapse: collapse;
       font-size: 2px;
       color: #333;
-      margin: 0 auto; /* Centra la tabella */
+      margin: 0 auto; 
     }
     table,
     th,
@@ -65,15 +65,15 @@
     }
   </style>
   <script>
-    /
+    
     function leggiFile(input) {
       let file = input.files[0]; 
-      let lettoreF = new FileReader(); 
-      lettoreF.readAsText(file);
+      let lettoreFile = new FileReader(); 
+      lettoreFile.readAsText(file);
 
-      lettoreF.onload = function () {
-        let contenuto = lettoreF.result; 
-        creaTab(contenuto); 
+      lettoreFile.onload = function () {
+        let informazioni = lettoreFile.result; 
+        creaTab(informazioni); 
       };
     }
 
@@ -82,7 +82,7 @@
       let newRighe;
       let arrayT = tab.split("\n");
       
-      let NColonne;
+      let colonne;
 
       for (let riga = 0; riga < arrayT.length; riga++) {
         newRighe = document.createElement("tr");
