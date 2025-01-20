@@ -16,6 +16,7 @@
       color: #000000;
       text-align: center;
       margin-bottom: 40px;
+      margin-top: 30px;
     }
     input[type="file"] {
       padding: 10px;
@@ -23,7 +24,7 @@
       margin-bottom: 20px;
       background-color: #cdcdcd;
       border: 1px solid #000000;
-      margin-left: 41%;
+      margin-left: 42%;
     }
     .output {
       width: 13.5%;
@@ -64,24 +65,23 @@
     }
   </style>
   <script>
-    //funzione di lettura del file
+    /
     function leggiFile(input) {
-      let file = input.files[0]; //presa in input del file
-      let lettoreF = new FileReader(); //creazione oggetto filereader
+      let file = input.files[0]; 
+      let lettoreF = new FileReader(); 
       lettoreF.readAsText(file);
 
       lettoreF.onload = function () {
-        let contenuto = lettoreF.result; // Contenuto del file letto
-        creaTab(contenuto); // Crea la tabella
+        let contenuto = lettoreF.result; 
+        creaTab(contenuto); 
       };
     }
 
-    //funzione per la creazione della tabella
     function creaTab(tab) {
       let tabella = document.createElement("table");
       let newRighe;
       let arrayT = tab.split("\n");
-      // console.log(arrayT);
+      
       let NColonne;
 
       for (let riga = 0; riga < arrayT.length; riga++) {
@@ -108,4 +108,5 @@
     <div id="output" class="output"></div>
   </body>
 </html>
+
 
