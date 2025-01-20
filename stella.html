@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Disegno Stella</h1>
-<h2>Canvas</h2>
+<h1>tella</h1>
+<h2>Stella 5 punte</h2>
 
 <canvas id="myCanvas" width="600" height="450" style="border:1px solid grey"></canvas>
 
 <script>
-const c = document.getElementById("myCanvas"); //creazione del canva e colorazione
+const c = document.getElementById("myCanvas"); 
 const ctx = c.getContext("2d");
-ctx.fillStyle = "navy";
+ctx.fillStyle = "grey";
 ctx.fillRect(0, 0, c.width, c.height);
 
   
-ctx.beginPath(); //inizio disegno stella
+ctx.beginPath(); 
 
 ctx.moveTo(100, 170);
 ctx.lineTo(440, 170);
@@ -21,7 +21,7 @@ ctx.lineTo(120, 350);
 ctx.lineTo(270, 70);
 ctx.lineTo(440, 350);
 ctx.lineTo(100, 170);
-ctx.strokeStyle = "goldenrod";
+ctx.strokeStyle = "yellow";
 ctx.lineWidth = 5;
 ctx.stroke();
 </script> 
