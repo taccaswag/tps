@@ -1,0 +1,93 @@
+<html>
+
+  <!DOCTYPE html>
+
+  <style>
+
+    body {
+      font-family: Arial;
+      background-color: rgba(238, 230, 230, 0.4);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: #000;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 25px;
+      color: #000;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+      font-size: 1em;
+      background-color: #cdcdcd;
+      border: 1px solid #000;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .output {
+      width: 300px;
+      background-color: #cdcdcd;
+      padding: 20px;
+      border: 1px solid #000;
+      margin: 20px auto;
+      word-wrap: break-word;
+    }
+    button{
+            font-size:20px;
+        }
+
+  </style>
+
+  <body>
+
+    <h1>Decodifica Testo</h1>
+
+    <button onclick="decodifica(testoCodificato)">Decodifica</button>
+
+    <p>Testo Codificato</p>
+    <div id="outputuno" class="output"></div>
+
+    <p>Testo Originale</p>
+    <div id="outputdue" class="output"></div>
+
+    <script>
+
+      let alfabeto = ["q", "8", "h", "V", "C", "w", "j", "D", "r", "4", "L", "G", "p", "F", "o", "Z", "s", "X", "9", "u", "Y", "E", "n", "3", "T", "a", "k", "5", "m", "b", "I", "M", "6", "B", "i", "g", "A", "t", "N", "S", "y", "2", "U", "x", "z", "7", "O", "f", "P", "l", "R", "d", "J", "K", "H", "e", "W", "1", "c", "v", "Q","0"];
+
+      let testo = "";
+      let testoCodificato = localStorage.getItem("datiRegistrazione");
+
+      document.getElementById("outputuno").textContent = testoCodificato;
+
+      function decodifica(testoCodificato) {
+
+        let output = "";
+        
+        for (let i = 0; i < testoCodificato.length; i++) {
+          let lettera = testoCodificato.charAt(i);
+          if (alfabeto.includes(lettera)) {
+            for (let j = 0; j < alfabeto.length; j++) {
+              if (alfabeto[j] == lettera) {
+                lettera = alfabeto[(j - 17 + alfabeto.length) % alfabeto.length];
+                break;
+              }
+            }
+          }
+          output += lettera;
+        }
+        document.getElementById("outputdue").textContent = output;
+      }
+
+    </script>
+
+  </body>
+
+</html>
