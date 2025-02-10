@@ -48,7 +48,9 @@
 
     <input type="file" onchange="leggiFile(this)" />
 
-    <button onclick="decodifica()">Decodifica</button>
+    <button onclick="codifica(testo)">Codifica</button>
+
+    <button onclick="decodifica(testoCodificato)">Decodifica</button>
 
     <div id="output" class="output"></div>
 
@@ -60,18 +62,16 @@
       let testoCodificato = "";
 
       function leggiFile(input) {
+
         let file = input.files[0];
         let lettoreFile = new FileReader();
         lettoreFile.readAsText(file);
-
         lettoreFile.onload = function () {
           testo = lettoreFile.result;  
-          testoCodificato = codifica(testo); 
-          document.getElementById("output").textContent = testoCodificato;
         };
       }
 
-      function codifica(testo) {
+      function codifica() {
 
         let output = "";
 
@@ -80,17 +80,18 @@
           if (alfabeto.includes(lettera)) {
             for (let j = 0; j < alfabeto.length; j++) {
               if (alfabeto[j] == lettera) {
-                lettera = alfabeto[(j + 13) % alfabeto.length];
+                lettera = alfabeto[(j + 17) % alfabeto.length];
                 break;
               }
             }
           }
           output += lettera;
         }
-        return output;
+        testoCodificato = output;
+        document.getElementById("output").textContent = output;
       }
 
-      function decodifica() {
+      function decodifica(testoCodificato) {
 
         let output = "";
         
@@ -99,7 +100,7 @@
           if (alfabeto.includes(lettera)) {
             for (let j = 0; j < alfabeto.length; j++) {
               if (alfabeto[j] == lettera) {
-                lettera = alfabeto[(j - 13 + alfabeto.length) % alfabeto.length];
+                lettera = alfabeto[(j - 17 + alfabeto.length) % alfabeto.length];
                 break;
               }
             }
@@ -112,5 +113,7 @@
     </script>
 
   </body>
+
+</html>
 
 </html>
