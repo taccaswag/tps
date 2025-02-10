@@ -48,6 +48,8 @@
 
     <input type="file" onchange="leggiFile(this)" />
 
+    <button onclick="stampa(testo)">Stampa</button>
+
     <button onclick="codifica(testo)">Codifica</button>
 
     <button onclick="decodifica(testoCodificato)">Decodifica</button>
@@ -108,6 +110,10 @@
           output += lettera;
         }
         document.getElementById("output").textContent = output;
+      }
+
+      function stampa(testo) {
+        document.getElementById("output").textContent = testo;
       }
 
     </script>
