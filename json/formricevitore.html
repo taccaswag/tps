@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DATI REGISTRATI</title>
+    <style>
+        body {
+            font-family: "Times New Roman";
+            background-color: #8deeff;
+            font-size: 35px;
+        }
+        .output {
+            margin-top: 30px;
+        }
+        table {
+            width: 50%;
+            margin-top: 20px;
+            border: 2px double black;
+        }
+        th, td {
+            border: 1px solid #000000;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #00e1ff;
+        }
+        button{
+            font-size: 25px;
+            background-color:#bebebe;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DATI REGISTRATI</h1>
+
+    <table id="tabella">
+        <tr>
+            <th>Cognome</th>
+            <th>Nome</th>
+            <th>Sesso</th>
+            <th>Indirizzo</th>
+            <th>Città</th>
+            <th>CAP</th>
+            <th>Nazione</th>
+        </tr>
+    </table>
+
+    <button type="button" onclick="tornaIndietro()">Torna alla pagina precedente</button>
+    <button type="button" onclick="mostraDati()">Mostra dati</button>
+
+    <script>
+
+        let matrice = JSON.parse(localStorage.getItem("datiRegistrazione"));
+
+        function mostraDati() {
+            const tabella = document.getElementById("tabella");
+
+            for (let j = 0; j < matrice.length; j++) {
+                let nuovaRiga = "<tr>";
+
+                for (let i = 0; i < matrice[j].length; i++) {
+                    nuovaRiga += "<td>" + matrice[j][i] + "</td>";
+                }
+
+                nuovaRiga += "</tr>";
+                tabella.innerHTML += nuovaRiga;
+            }
+        }
+
+        function tornaIndietro() {
+            location.href = "https://taccaswag.github.io/tps/tabella+localstorage/formdati.html";
+        }
+    </script>
+
+</body>
+</html>
