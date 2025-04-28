@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cannizzaro 4 Survival</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        /* Font Rock Salt, simile a quello di Breaking Bad */
+        body {
+            font-family: 'Rock Salt', cursive; /* Applica il font Rock Salt */
+            background: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapers.com%2Fcamouflage-background&psig=AOvVaw0Lu7UVXZzqlS6-8-e3O9Di&ust=1745923870051000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIj98cHE-YwDFQAAAAAdAAAAABAI') no-repeat center center fixed; /* Aggiungi la texture camo come sfondo */
+            background-size: cover; /* Assicura che l'immagine di sfondo copra l'intera pagina */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8); /* Grigio scuro con trasparenza */
+            color: #f4f4f4;
+            padding: 20px 40px;
+            font-size: 32px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            flex-grow: 1;
+            text-align: center; /* Centra il titolo */
+        }
+
+        button {
+            background-color: #6d7f54; /* Verde militare */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 15px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #4b5e3b; /* Verde più scuro */
+            transform: scale(1.05);
+        }
+
+        .registration-link {
+            background-color: #6d7f54; /* Verde militare */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .registration-link:hover {
+            background-color: #4b5e3b; /* Verde più scuro */
+            transform: scale(1.05);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .product {
+            background-color: rgba(58, 58, 58, 0.9); /* Grigio scuro con trasparenza */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            font-size: 22px;
+            color: #a9b5a7; /* Verde militare chiaro */
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            color: #d1d1d1;
+            font-size: 14px;
+        }
+
+        .product .price {
+            font-weight: bold;
+            color: #8a9a5b; /* Verde oliva chiaro */
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        #footer-info {
+            background-color: #212121; /* Nero */
+            color: #f4f4f4;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #disclaimer {
+            background-color: rgba(51, 51, 51, 0.8); /* Grigio scuro con trasparenza */
+            color: #f4f4f4;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 16px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        /* Centratura del campo di input per il file */
+        #jsonFileInput {
+            display: block;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #6d7f54;
+            background-color: #333333;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #jsonFileInput:hover {
+            background-color: #4b5e3b;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Registrazione spostata a sinistra -->
+    <a href="login.html" class="registration-link">Registrazione</a>
+    
+    <h1>Cannizzaro 4 Survival</h1>
+
+    <!-- Bottoni a destra -->
+    <div>
+        <button onclick="window.location.href='https://example.com/carrello.html'">Carrello</button>
+        <button onclick="window.location.href='https://example.com/wishlist.html'">Wishlist</button>
+    </div>
+</header>
+
+<main>
+    <div id="product-list" class="product-grid"></div>
+    <!-- Centrato il campo per inserire il file -->
+    <div style="text-align: center;">
+        <input type="file" id="jsonFileInput" accept=".json" />
+    </div>
+</main>
+
+<section id="disclaimer">
+    <h2>Avvertenze Legali</h2>
+    <p>Attenzione! La vendita di armi è soggetta a rigorosi controlli legali. Le armi in vendita su questo sito sono destinate esclusivamente a coloro che sono in possesso dei requisiti legali previsti dalla legge nazionale ed internazionale. Gli acquisti sono consentiti solo a maggiorenni che abbiano ottenuto tutte le autorizzazioni necessarie per l'acquisto, il possesso e l'uso di armi. È responsabilità del cliente verificare di essere in regola con la legislazione vigente nel proprio paese di residenza. Cannizzaro 4 Survival non si assume alcuna responsabilità per l'uso improprio dei prodotti acquistati.</p>
+    <p>Acquista con consapevolezza, rispettando le leggi e priorità di sicurezza. In caso di dubbi, consultare le normative locali in materia di armi e sicurezza.</p>
+</section>
+
+<section id="footer-info">
+    <footer>
+        <p>&copy; 2025 Cannizzaro 4 Survival - Tutti i diritti riservati</p>
+        <p>Informazioni legali | Termini e condizioni</p>
+    </footer>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const fileInput = document.getElementById("jsonFileInput");
+        const productList = document.getElementById("product-list");
+
+        // Se ci sono prodotti salvati, visualizzali
+        const savedProducts = localStorage.getItem("productList");
+        if (savedProducts) {
+            try {
+                const products = JSON.parse(savedProducts);
+                displayProducts(products);
+            } catch (error) {
+                console.error("Errore nel parsing del JSON salvato:", error);
+            }
+        }
+
+        // Quando l'utente carica un nuovo file JSON
+        fileInput.addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    try {
+                        const products = JSON.parse(e.target.result);
+                        localStorage.setItem("productList", JSON.stringify(products)); // Salva nel localStorage
+                        displayProducts(products);
+                    } catch (error) {
+                        console.error("Errore nel parsing del JSON:", error);
+                    }
+                };
+                reader.readAsText(file);
+            }
+        });
+
+        // Mostra i prodotti nella griglia
+        function displayProducts(products) {
+            productList.innerHTML = "";
+            products.forEach(product => {
+                const productElement = document.createElement("div");
+                productElement.classList.add("product");
+                productElement.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <div class="product-description">${product.description}</div>
+                    <p class="price">${product.price}</p>
+                `;
+                productElement.addEventListener("click", () => {
+                    localStorage.setItem("selectedProduct", JSON.stringify(product));
+                    window.location.href = "prodotto.html"; // Assicurati che esista
+                });
+                productList.appendChild(productElement);
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
