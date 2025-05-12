@@ -1,0 +1,68 @@
+[
+    {
+      "name": "S.T. Dupont Ligne 2 Picasso",
+      "description": "Questo raffinato accendino da collezione celebra il genio artistico di Pablo Picasso attraverso incisioni eleganti ispirate alle sue opere più iconiche. Realizzato con cura artigianale francese, presenta finiture in palladio lucido e smalti decorativi applicati a mano. Il classico 'cling' all’apertura, tipico della linea Ligne 2, ne conferma l’autenticità e il prestigio.",
+      "price": "€1.200",
+      "image": "https://cdn.humidor-station.com/7187-thickbox_default/serie-di-accendini-picasso-st-dupont-linea-2.jpg"
+    },
+    {
+      "name": "S.T. Dupont Ligne 2 James Bond 007 Edition",
+      "description": "Ispirato allo stile impeccabile dell’agente segreto più famoso al mondo, questo accendino presenta una raffinata trama guilloché e l’iconico logo 007 inciso sulla superficie. Il corpo è realizzato in metallo prezioso con dettagli in palladio, mentre la meccanica garantisce una fiamma morbida e costante.",
+      "price": "€1.350",
+      "image": "https://www.italianpens.com/canoABM/_files/STDUPONT/Screen%20Shot%202020-10-08%20at%206.31.34%20AM.png"
+    },
+    {
+      "name": "Dupont Atelier 1953 Chinese Lacquer",
+      "description": "Questo accendino esclusivo fa parte della linea Atelier 1953, che celebra le tecniche artigianali tradizionali della maison S.T. Dupont. La lacca cinese è applicata a mano in più strati, conferendo una profondità e lucentezza ineguagliabili. Ogni pezzo è numerato e unico, simbolo dell’alta manifattura francese.",
+      "price": "€2.000",
+      "image": "https://www.fahrneyspens.com/ItemImages/Large/16126-brn.jpg"
+    },
+    {
+      "name": "IM Corona Old Boy Sterling Silver",
+      "description": "Un tributo al design vintage degli anni ’50, questo accendino in argento sterling è particolarmente apprezzato dagli amanti della pipa per la sua funzionalità e affidabilità. Dotato di accensione a pietrina e regolazione della fiamma laterale, include anche uno sportellino integrato per la ricarica del gas.",
+      "price": "€650",
+      "image": "https://www.tabak-kontor.de/images/stories/virtuemart/product/old_boy_sillems_8276.jpg"
+    },
+    {
+      "name": "Zippo Armor 1941 Brushed Sterling",
+      "description": "Un’edizione speciale del leggendario Zippo 1941, caratterizzata da una cassa più spessa (Armor Case) per una maggiore resistenza. Il corpo in argento massiccio spazzolato unisce l’estetica vintage alla robustezza moderna. Progettato per durare nel tempo, mantiene il classico 'clic' Zippo.",
+      "price": "€450",
+      "image": "https://www.zippo.co.uk/cdn/shop/products/24_MAIN.jpg?v=1600265067"
+    },
+    {
+      "name": "Dunhill Millennium Gold-Plated",
+      "description": "Tra i modelli più lussuosi della casa britannica Alfred Dunhill, il Millennium è rivestito in oro 18 carati con superfici levigate a specchio. Il design minimale ma raffinato incarna lo stile inglese classico, mentre l’accensione a rullo garantisce un funzionamento impeccabile.",
+      "price": "€2.400",
+      "image": "https://i.ebayimg.com/images/g/YaUAAOSw9KJjDjLz/s-l1200.jpg"
+    },
+    {
+      "name": "S.T. Dupont Space Odyssey Prestige",
+      "description": "Una vera opera d’arte ispirata alla fantascienza e alla conquista dello spazio. Il design futuristico include dettagli lavorati con precisione, smalti blu galattico e una struttura complessa che richiama le navicelle spaziali. Prodotto in edizione limitata, è un oggetto da collezione completo di astuccio personalizzato.",
+      "price": "€3.800",
+      "image": "https://m.media-amazon.com/images/I/31AAGf9xVCL.jpg"
+    },
+    {
+      "name": "Cartier Trinity Palladium",
+      "description": "Questo accendino dal design raffinato e minimalista riprende il celebre motivo Trinity di Cartier, con tre cerchi intrecciati che simboleggiano amore, fedeltà e amicizia. Realizzato in palladio con superfici lucide e linee essenziali, è un accessorio sobrio ma ricco di significato.",
+      "price": "€1.250",
+      "image": "https://www.cartier.com/variants/images/1647597286078264/img1/w400.jpg"
+    },
+    {
+      "name": "Dupont Defi Extreme Black",
+      "description": "Progettato per funzionare anche nelle condizioni climatiche più estreme (fino a -10°C e a oltre 3500 m di altitudine), questo accendino è l’ideale per gli avventurieri. La struttura in materiale composito ad alta resistenza è completata da una finitura nera opaca e una potente fiamma antivento.",
+      "price": "€220",
+      "image": "https://www.matrixbistrot.com/2229-large_default/accendino-defi-extreme-matte-black.jpg"
+    },
+    {
+      "name": "Zippo 85th Anniversary Gold Limited Edition",
+      "description": "Creato per celebrare l’85º anniversario della leggendaria azienda americana, questo accendino dorato in edizione limitata unisce l’eleganza alla storia. La cassa dorata con logo commemorativo inciso rappresenta un must per collezionisti Zippo. Fornito in confezione celebrativa con certificato.",
+      "price": "€320",
+      "image": "https://looev.com/cdn/shop/products/d26a8246eb7e90f80ea8682dcdc1e977_2048x2048.jpg?v=1683617850"
+    },
+    {
+      "name": "IM Corona Tsubota Pearl Oil Lighter",
+      "description": "Elegante accendino giapponese con design compatto e superfici lavorate a mano. Realizzato da Tsubota Pearl, noto brand nipponico di alta qualità, è alimentato a benzina e apprezzato per la sua discrezione e semplicità. Perfetto per chi desidera un oggetto unico, minimalista e funzionale.",
+      "price": "€110",
+      "image": "https://www.bollitopipe.com/98166-home_default/tsubota-pearl-stanley-pipe-lighter-silver-rustic.jpg"
+    }
+]
