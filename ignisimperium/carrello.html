@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrello | Ignis Imperium</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #1C1C1C;
+            color: #FDFBF7;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #C0392B;
+            color: #D4AF37;
+            padding: 40px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #FDFBF7;
+            text-decoration: none;
+            font-size: 20px;
+            margin-left: 30px;
+            text-transform: uppercase;
+        }
+
+        main {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 42px;
+            color: #D4AF37;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-table th, .cart-table td {
+            padding: 20px;
+            border-bottom: 1px solid #444;
+            text-align: center;
+        }
+
+        .cart-table th {
+            color: #D4AF37;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .cart-table img {
+            width: 100px;
+            border-radius: 10px;
+            border: 2px solid #B08D57;
+        }
+
+        .price {
+            color: #C0392B;
+            font-weight: bold;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 24px;
+            font-weight: bold;
+            color: #C0392B;
+            margin-top: 30px;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            background-color: #D4AF37;
+            color: #1C1C1C;
+            font-weight: bold;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #B08D57;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #C0392B;
+            color: #D4AF37;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 60px;
+            border-top: 2px solid #D4AF37;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>IGNIS IMPERIUM</h1>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Il Tuo Carrello</h2>
+    <table class="cart-table" id="cart-table">
+        <thead>
+            <tr>
+                <th>Prodotto</th>
+                <th>Nome</th>
+                <th>Quantità</th>
+                <th>Prezzo unitario</th>
+                <th>Totale</th>
+            </tr>
+        </thead>
+        <tbody id="cart-body">
+            </tbody>
+    </table>
+
+    <div class="total" id="total"></div>
+
+    <div class="actions">
+        <button class="cta-button" onclick="vaiAlPagamento()">Vai al Pagamento</button>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; IGNIS IMPERIUM</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const carrello = JSON.parse(localStorage.getItem("cart")) || [];
+        const corpoCarrello = document.getElementById("cart-body");
+        const totaleMostrato = document.getElementById("total");
+
+        let totale = 0;
+
+        if (carrello.length === 0) {
+            corpoCarrello.innerHTML = "<tr><td colspan='5' style='color: #7D7D7D;'>Il tuo carrello è vuoto.</td></tr>";
+            totaleMostrato.textContent = "";
+        } else {
+            carrello.forEach(prodotto => {
+                const prezzo = parseFloat(prodotto.price.replace("€", "").replace(".", "").replace(",", "."));
+                const subtotale = prezzo * (prodotto.quantity || 1);
+                totale += subtotale;
+
+                const riga = document.createElement("tr");
+                riga.innerHTML = `
+                    <td><img src="${prodotto.image}" alt="${prodotto.name}"></td>
+                    <td>${prodotto.name}</td>
+                    <td>${prodotto.quantity || 1}</td>
+                    <td class="price">€${prezzo.toFixed(2)}</td>
+                    <td class="price">€${subtotale.toFixed(2)}</td>
+                `;
+                corpoCarrello.appendChild(riga);
+            });
+
+            totaleMostrato.textContent = `Totale: €${totale.toFixed(2)}`;
+        }
+    });
+
+    function vaiAlPagamento() {
+        const carrello = JSON.parse(localStorage.getItem("cart")) || [];
+        if (carrello.length > 0) {
+            localStorage.setItem("paymentCart", JSON.stringify(carrello));
+            window.location.href = "pagamento.html";
+        }
+    }
+</script>
+
+</body>
+</html>
