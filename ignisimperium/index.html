@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+<html lang="it">
 <head>
-    <title>Pagamento | Ignis Imperium</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignis Imperium | Accendini da Collezione</title>
     <style>
         /* Global Settings */
         body {
@@ -9,144 +12,133 @@
             padding: 0;
             background-color: #1C1C1C;
             color: #FDFBF7;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
         }
 
         /* Header */
         header {
             background-color: #C0392B;
             color: #D4AF37;
-            padding: 40px 80px;
+            padding: 20px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            border: 2px solid #D4AF37;
+            border-bottom: 2px solid #D4AF37;
         }
 
         header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 40px;
-            margin: 0;
+            font-size: 36px;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 3px;
             font-weight: bold;
-            color: #D4AF37;
         }
 
         nav {
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
 
         nav a {
             color: #FDFBF7;
             text-decoration: none;
-            font-size: 20px;
-            font-weight: 500;
+            font-size: 18px;
             text-transform: uppercase;
-            letter-spacing: 1px;
             transition: color 0.3s;
         }
 
-        /* Main Content */
+        nav a:hover {
+            color: #B08D57;
+        }
+
+        /* Main Section */
         main {
-            padding: 100px 60px;
-            text-align: center;
+            flex: 1;
+            padding: 50px 30px;
             background-color: #2A2A2A;
-            border-radius: 30px;
-            margin: 50px 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         h2 {
-            font-size: 45px;
+            font-size: 40px;
             margin-bottom: 40px;
-            font-family: 'Montserrat', sans-serif;
             color: #D4AF37;
             font-weight: bold;
+            text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        .cart-details {
-            text-align: left;
-            background-color: #1C1C1C;
-            padding: 40px;
-            border-radius: 10px;
-            max-width: 800px;
-            margin: 0 auto;
-            border: 2px solid #B08D57;
-        }
-
-        .cart-details p {
-            font-size: 18px;
-            color: #7D7D7D;
-            margin-bottom: 20px;
-        }
-
-        .cart-details .total {
-            font-size: 24px;
-            color: #C0392B;
-            font-weight: bold;
-        }
-
-        /* Input Fields Styling */
-        .input-fields-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Centra gli input fields */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
             justify-content: center;
-            margin-top: 40px;
         }
 
-        .input-field {
-            margin-bottom: 20px;
-            font-size: 18px;
-            width: 100%;
-            max-width: 400px; /* Limita la larghezza */
-        }
-
-        .input-field label {
-            margin-bottom: 10px;
-            color: #D4AF37;
-        }
-
-        .input-field input {
-            padding: 10px;
-            font-size: 16px;
-            border: 2px solid #B08D57;
+        .product {
+            background-color: #1C1C1C;
+            padding: 20px;
             border-radius: 10px;
-            background-color: #2A2A2A;
-            color: #FDFBF7;
+            text-align: center;
+            border: 2px solid #B08D57;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
             width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 3px solid #B08D57;
+        }
+
+        .product h3 {
+            font-size: 22px;
+            color: #D4AF37;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .product p {
+            font-size: 14px;
+            color: #7D7D7D;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .product .price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #C0392B;
+            margin-top: 10px;
         }
 
         .cta-button {
             background-color: #D4AF37;
             color: #1C1C1C;
-            padding: 15px 30px;
+            padding: 12px 25px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
             border-radius: 30px;
             text-transform: uppercase;
-            transition: background-color 0.3s, transform 0.2s;
-            margin-top: 30px;
-        }
-
-        .cta-button:hover {
-            background-color: #B08D57;
-            transform: scale(1.05);
+            margin-top: 20px;
         }
 
         /* Footer */
         footer {
             background-color: #C0392B;
             color: #D4AF37;
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 20px;
+            font-size: 18px;
             letter-spacing: 1px;
-            border: 2px solid #D4AF37;
+            border-top: 2px solid #D4AF37;
         }
 
         footer a {
@@ -159,6 +151,24 @@
         footer a:hover {
             color: #B08D57;
         }
+
+        /* File Upload Button */
+        #jsonFileInput {
+            background-color: #D4AF37;
+            color: #1C1C1C;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+
+        #jsonFileInput:hover {
+            background-color: #B08D57;
+        }
     </style>
 </head>
 <body>
@@ -166,36 +176,17 @@
 <header>
     <h1>IGNIS IMPERIUM</h1>
     <nav>
-        <a href="index.html">Home</a>
         <a href="carrello.html">Carrello</a>
     </nav>
 </header>
 
 <main>
-    <h2>PAGAMENTO</h2>
+    <h2>ACCENDINI DA COLLEZIONE</h2>
 
-    <div class="cart-details" id="cart-details">
-        </div>
-
-    <div class="input-fields-container">
-        <div class="input-field">
-            <label for="first-name">Nome:</label>
-            <input type="text" id="first-name" placeholder="Inserisci il tuo nome" required />
-        </div>
-
-        <div class="input-field">
-            <label for="last-name">Cognome:</label>
-            <input type="text" id="last-name" placeholder="Inserisci il tuo cognome" required />
-        </div>
-
-        <div class="input-field">
-            <label for="address">Indirizzo di Spedizione:</label>
-            <input type="text" id="address" placeholder="Inserisci il tuo indirizzo" required />
-        </div>
-    </div>
+    <div class="product-grid" id="product-list"></div>
 
     <div style="text-align: center; margin-top: 40px;">
-        <button class="cta-button" id="complete-payment">Completa Pagamento</button>
+        <input type="file" id="jsonFileInput" accept=".json" class="cta-button" />
     </div>
 </main>
 
@@ -205,44 +196,56 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dettagliCarrello = document.getElementById("cart-details");
-        const bottoneCompletaPagamento = document.getElementById("complete-payment");
+        const inputFileInput = document.getElementById("jsonFileInput");
+        const listaProdotti = document.getElementById("product-list");
 
-        // Recupera il carrello dal localStorage
-        const carrello = JSON.parse(localStorage.getItem("cart")) || [];
-
-        // Visualizza i dettagli del carrello
-        function mostraDettagliCarrello() {
-            if (carrello.length > 0) {
-                let totale = 0;
-                dettagliCarrello.innerHTML = '<h3>Prodotti nel Carrello:</h3>';
-                carrello.forEach(elemento => {
-                    dettagliCarrello.innerHTML += `
-                        <p><strong>${elemento.name}</strong> - ${elemento.quantity} x ${elemento.price}</p>
-                    `;
-                    totale += elemento.quantity * parseFloat(elemento.price.replace('€', '').replace(',', '.'));
-                });
-                dettagliCarrello.innerHTML += `<p class="total">Totale: €${totale.toFixed(2)}</p>`;
-            } else {
-                dettagliCarrello.innerHTML = `<p>Il tuo carrello è vuoto. Aggiungi dei prodotti prima di procedere al pagamento.</p>`;
+        // Se ci sono prodotti salvati, visualizzali
+        const prodottiSalvati = localStorage.getItem("productList");
+        if (prodottiSalvati) {
+            try {
+                const prodotti = JSON.parse(prodottiSalvati);
+                mostraProdotti(prodotti);
+            } catch (erroreParsing) {
+                console.error("Errore nel parsing del JSON salvato:", erroreParsing);
             }
         }
 
-        mostraDettagliCarrello();
-
-        bottoneCompletaPagamento.addEventListener("click", function () {
-            const nome = document.getElementById("first-name").value;
-            const cognome = document.getElementById("last-name").value;
-            const indirizzo = document.getElementById("address").value;
-
-            if (carrello.length > 0 && nome && cognome && indirizzo) {
-                alert(`Pagamento completato con successo!\nGrazie per aver scelto Ignis Imperium.\nSpedizione a: ${nome} ${cognome}, ${indirizzo}`);
-                localStorage.removeItem("cart"); // Pulisce il carrello dopo il pagamento
-                window.location.href = "index.html"; // Torna alla home dopo il pagamento
-            } else {
-                alert("Per favore, completa tutti i campi e assicurati che il carrello non sia vuoto.");
+        // Quando l'utente carica un nuovo file JSON
+        inputFileInput.addEventListener("change", function (eventoCambiamento) {
+            const file = eventoCambiamento.target.files[0];
+            if (file) {
+                const lettoreFile = new FileReader();
+                lettoreFile.onload = function (eventoCaricamento) {
+                    try {
+                        const prodotti = JSON.parse(eventoCaricamento.target.result);
+                        localStorage.setItem("productList", JSON.stringify(prodotti)); // Salva nel localStorage
+                        mostraProdotti(prodotti);
+                    } catch (erroreParsing) {
+                        console.error("Errore nel parsing del JSON:", erroreParsing);
+                    }
+                };
+                lettoreFile.readAsText(file);
             }
         });
+
+        // Mostra i prodotti nella griglia
+        function mostraProdotti(prodotti) {
+            listaProdotti.innerHTML = "";
+            prodotti.forEach(prodotto => {
+                const elementoProdotto = document.createElement("div");
+                elementoProdotto.classList.add("product");
+                elementoProdotto.innerHTML = `
+                    <h3>${prodotto.name}</h3>
+                    <img src="${prodotto.image}" alt="${prodotto.name}">
+                    <p class="price">${prodotto.price}</p>
+                `;
+                elementoProdotto.addEventListener("click", () => {
+                    localStorage.setItem("selectedProduct", JSON.stringify(prodotto));
+                    window.location.href = "prodotto.html"; // Assicurati che esista
+                });
+                listaProdotti.appendChild(elementoProdotto);
+            });
+        }
     });
 </script>
 
