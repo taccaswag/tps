@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<head>
+    <title>Pagamento | Ignis Imperium</title>
+    <style>
+        /* Global Settings */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1C1C1C;
+            color: #FDFBF7;
+        }
+
+        /* Header */
+        header {
+            background-color: #C0392B;
+            color: #D4AF37;
+            padding: 40px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid #D4AF37;
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 40px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: bold;
+            color: #D4AF37;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #FDFBF7;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        /* Main Content */
+        main {
+            padding: 100px 60px;
+            text-align: center;
+            background-color: #2A2A2A;
+            border-radius: 30px;
+            margin: 50px 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 45px;
+            margin-bottom: 40px;
+            font-family: 'Montserrat', sans-serif;
+            color: #D4AF37;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .cart-details {
+            text-align: left;
+            background-color: #1C1C1C;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid #B08D57;
+        }
+
+        .cart-details p {
+            font-size: 18px;
+            color: #7D7D7D;
+            margin-bottom: 20px;
+        }
+
+        .cart-details .total {
+            font-size: 24px;
+            color: #C0392B;
+            font-weight: bold;
+        }
+
+        /* Input Fields Styling */
+        .input-fields-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra gli input fields */
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .input-field {
+            margin-bottom: 20px;
+            font-size: 18px;
+            width: 100%;
+            max-width: 400px; /* Limita la larghezza */
+        }
+
+        .input-field label {
+            margin-bottom: 10px;
+            color: #D4AF37;
+        }
+
+        .input-field input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #B08D57;
+            border-radius: 10px;
+            background-color: #2A2A2A;
+            color: #FDFBF7;
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: #D4AF37;
+            color: #1C1C1C;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 30px;
+            text-transform: uppercase;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            background-color: #B08D57;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #C0392B;
+            color: #D4AF37;
+            padding: 50px 20px;
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 1px;
+            border: 2px solid #D4AF37;
+        }
+
+        footer a {
+            color: #D4AF37;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        footer a:hover {
+            color: #B08D57;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>IGNIS IMPERIUM</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="carrello.html">Carrello</a>
+    </nav>
+</header>
+
+<main>
+    <h2>PAGAMENTO</h2>
+
+    <div class="cart-details" id="cart-details">
+        </div>
+
+    <div class="input-fields-container">
+        <div class="input-field">
+            <label for="first-name">Nome:</label>
+            <input type="text" id="first-name" placeholder="Inserisci il tuo nome" required />
+        </div>
+
+        <div class="input-field">
+            <label for="last-name">Cognome:</label>
+            <input type="text" id="last-name" placeholder="Inserisci il tuo cognome" required />
+        </div>
+
+        <div class="input-field">
+            <label for="address">Indirizzo di Spedizione:</label>
+            <input type="text" id="address" placeholder="Inserisci il tuo indirizzo" required />
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <button class="cta-button" id="complete-payment">Completa Pagamento</button>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; IGNIS IMPERIUM</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const dettagliCarrello = document.getElementById("cart-details");
+        const bottoneCompletaPagamento = document.getElementById("complete-payment");
+
+        // Recupera il carrello dal localStorage
+        const carrello = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Visualizza i dettagli del carrello
+        function mostraDettagliCarrello() {
+            if (carrello.length > 0) {
+                let totale = 0;
+                dettagliCarrello.innerHTML = '<h3>Prodotti nel Carrello:</h3>';
+                carrello.forEach(elemento => {
+                    dettagliCarrello.innerHTML += `
+                        <p><strong>${elemento.name}</strong> - ${elemento.quantity} x ${elemento.price}</p>
+                    `;
+                    totale += elemento.quantity * parseFloat(elemento.price.replace('€', '').replace(',', '.'));
+                });
+                dettagliCarrello.innerHTML += `<p class="total">Totale: €${totale.toFixed(2)}</p>`;
+            } else {
+                dettagliCarrello.innerHTML = `<p>Il tuo carrello è vuoto. Aggiungi dei prodotti prima di procedere al pagamento.</p>`;
+            }
+        }
+
+        mostraDettagliCarrello();
+
+        bottoneCompletaPagamento.addEventListener("click", function () {
+            const nome = document.getElementById("first-name").value;
+            const cognome = document.getElementById("last-name").value;
+            const indirizzo = document.getElementById("address").value;
+
+            if (carrello.length > 0 && nome && cognome && indirizzo) {
+                alert(`Pagamento completato con successo!\nGrazie per aver scelto Ignis Imperium.\nSpedizione a: ${nome} ${cognome}, ${indirizzo}`);
+                localStorage.removeItem("cart"); // Pulisce il carrello dopo il pagamento
+                window.location.href = "index.html"; // Torna alla home dopo il pagamento
+            } else {
+                alert("Per favore, completa tutti i campi e assicurati che il carrello non sia vuoto.");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
