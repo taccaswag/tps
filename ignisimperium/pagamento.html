@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento | Ignis Imperium</title>
     <style>
-        /* Global Settings */
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -14,7 +13,6 @@
             color: #FDFBF7;
         }
 
-        /* Header */
         header {
             background-color: #C0392B;
             color: #D4AF37;
@@ -27,7 +25,6 @@
         }
 
         header h1 {
-            font-family: 'Montserrat', sans-serif;
             font-size: 40px;
             margin: 0;
             text-transform: uppercase;
@@ -51,7 +48,6 @@
             transition: color 0.3s;
         }
 
-        /* Main Content */
         main {
             padding: 100px 60px;
             text-align: center;
@@ -64,7 +60,6 @@
         h2 {
             font-size: 45px;
             margin-bottom: 40px;
-            font-family: 'Montserrat', sans-serif;
             color: #D4AF37;
             font-weight: bold;
             letter-spacing: 2px;
@@ -92,11 +87,10 @@
             font-weight: bold;
         }
 
-        /* Input Fields Styling */
         .input-fields-container {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centra gli input fields */
+            align-items: center;
             justify-content: center;
             margin-top: 40px;
         }
@@ -105,7 +99,7 @@
             margin-bottom: 20px;
             font-size: 18px;
             width: 100%;
-            max-width: 400px; /* Limita la larghezza */
+            max-width: 400px;
         }
 
         .input-field label {
@@ -141,7 +135,6 @@
             transform: scale(1.05);
         }
 
-        /* Footer */
         footer {
             background-color: #C0392B;
             color: #D4AF37;
@@ -177,8 +170,7 @@
 <main>
     <h2>PAGAMENTO</h2>
 
-    <div class="cart-details" id="cart-details">
-        </div>
+    <div class="cart-details" id="cart-details"></div>
 
     <div class="input-fields-container">
         <div class="input-field">
@@ -211,19 +203,27 @@
         const dettagliCarrello = document.getElementById("cart-details");
         const bottoneCompletaPagamento = document.getElementById("complete-payment");
 
-        // Recupera il carrello dal localStorage
         const carrello = JSON.parse(localStorage.getItem("cart")) || [];
 
-        // Visualizza i dettagli del carrello
         function mostraDettagliCarrello() {
             if (carrello.length > 0) {
                 let totale = 0;
                 dettagliCarrello.innerHTML = '<h3>Prodotti nel Carrello:</h3>';
                 carrello.forEach(elemento => {
+                    const prezzo = parseFloat(
+                        elemento.price
+                            .toString()
+                            .replace(/€/g, '')
+                            .replace(/\./g, '')
+                            .replace(',', '.')
+                    );
+                    const quantita = elemento.quantity || 1;
+                    const subtotale = prezzo * quantita;
+                    totale += subtotale;
+
                     dettagliCarrello.innerHTML += `
-                        <p><strong>${elemento.name}</strong> - ${elemento.quantity} x ${elemento.price}</p>
+                        <p><strong>${elemento.name}</strong> - ${quantita} x €${prezzo.toFixed(2)}</p>
                     `;
-                    totale += elemento.quantity * parseFloat(elemento.price.replace('€', '').replace(',', '.'));
                 });
                 dettagliCarrello.innerHTML += `<p class="total">Totale: €${totale.toFixed(2)}</p>`;
             } else {
@@ -240,8 +240,8 @@
 
             if (carrello.length > 0 && nome && cognome && indirizzo) {
                 alert(`Pagamento completato con successo!\nGrazie per aver scelto Ignis Imperium.\nSpedizione a: ${nome} ${cognome}, ${indirizzo}`);
-                localStorage.removeItem("cart"); // Pulisce il carrello dopo il pagamento
-                window.location.href = "index.html"; // Torna alla home dopo il pagamento
+                localStorage.removeItem("cart");
+                window.location.href = "index.html";
             } else {
                 alert("Per favore, completa tutti i campi e assicurati che il carrello non sia vuoto.");
             }
