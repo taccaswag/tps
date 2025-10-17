@@ -1,16 +1,16 @@
 [
   {
-  "nome": "Marco",
-  "cognome":"Rossi",
-  "citta": "Roma",
-  "indirizzo": "Via Garibaldi 5",
-  "cap": "00042"
+  "nome": "Stefano",
+  "cognome":"Re",
+  "citta": "Parabiago",
+  "indirizzo": "Via Roma 1",
+  "cap": "20015"
 },
 {
-  "nome": "Giovanni",
-  "cognome":"Muciacia",
-  "citta": "Treviglio",
-  "indirizzo": "Via Matteotti 2",
-  "cap": "24047"
+  "nome": "Trevor",
+  "cognome":"LaProvinc3",
+  "citta": "Rho",
+  "indirizzo": "Stazione di Rho",
+  "cap": "20017"
   }
 ]
