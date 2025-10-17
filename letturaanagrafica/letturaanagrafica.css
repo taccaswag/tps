@@ -1,4 +1,4 @@
-/* Centra il contenuto verticalmente e orizzontalmente*/
+
 body {
   display: flex;
   flex-direction: column;
