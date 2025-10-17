@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="listanera.css">
+<html>
+<head>
+    <script>
+        function lettura(){
+            const richiesta = new XMLHttpRequest(); //creazione oggetto
+            richiesta.open("GET", 'ListaNera.json', true); //apertura richiesta per ottenere il file json scritto nell' argoment0, true=asincrona
+            richiesta.send();  //invio richiesta
+
+            richiesta.onload=function(){
+                const parseJSON= JSON.parse(richiesta.responseText);
+                //document.getElementById("output").innerHTML=JSON.stringify(parseJSON);
+                console.log(parseJSON);
+
+                //creazione tabella
+                let tabella= document.createElement("table");
+                
+                /*Access to XMLHttpRequest at 'file:///C:/Users/billo/Desktop/Compiti/TPS/5AI/ListaNera.json' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.Understand this error
+                ListaNera.html:8  GET file:///C:/Users/billo/Desktop/Compiti/TPS/5AI/ListaNera.json net::ERR_FAILED*/
+                const chiavi=Object.keys(parseJSON[0])//chiavi del primo oggetto del file JSON per fare l'intestazione
+                
+                //creazione della prima riga di intestazione con le chiavi e appensione di essa alla tabella
+                let intestazioneRow=document.createElement("tr")
+                for(let i=0; i<chiavi.length; i++){
+                    let intestazione=document.createElement("th");
+                    intestazione.textContent= chiavi[i];
+                    intestazioneRow.appendChild(intestazione)  
+                }
+                tabella.appendChild(intestazioneRow)
+
+                //creazione contenuto tabella
+                
+                for(let i=0; i<parseJSON.length ;i++){
+                    let righe= document.createElement("tr");
+                    for(let j=0; j<chiavi.length; j++ ){
+                        let colonne= document.createElement("td");
+                        colonne.textContent = colonne.textContent = parseJSON[i][chiavi[j]];; //prende valore della chiave al posto "j" dell'oggetto "i"
+                        righe.appendChild(colonne);
+                    }
+                tabella.appendChild(righe);
+                }   
+                let output= document.getElementById("output");
+                output.appendChild(tabella);
+        }
+    }
+    </script>
+</head>
+
+
+<body>
+
+    <h1>Lista Nera</h1>
+   <p id="output">  </p>
+   <input type="button" value="schiaccia" onclick="lettura()">
+</body>
+
+</html>
+
+
+
