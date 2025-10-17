@@ -1,0 +1,51 @@
+/* Centra il contenuto verticalmente e orizzontalmente*/
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0fdf4; 
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+body p, h1, h2 {
+  padding: 10px;
+  font-size: 32px;
+  color: #065f46; 
+  text-align: center;
+}
+
+input[type="button"] {
+  padding: 10px 20px;
+  margin: 20px auto;
+  background-color: #10b981; 
+  color: white;
+  border: none;
+  font-size: 16px;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  font-size: 16px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+table, th, td {
+  border: 1px solid #d1fae5; 
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+th {
+  background-color: #34d399; 
+  color: white;
+  font-weight: bold;
+}
+
+
