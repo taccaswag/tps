@@ -1,0 +1,16 @@
+[
+  {
+  "nome": "Marco",
+  "cognome":"Rossi",
+  "citta": "Roma",
+  "indirizzo": "Via Garibaldi 5",
+  "cap": "00042"
+},
+{
+  "nome": "Giovanni",
+  "cognome":"Muciacia",
+  "citta": "Treviglio",
+  "indirizzo": "Via Matteotti 2",
+  "cap": "24047"
+  }
+]
