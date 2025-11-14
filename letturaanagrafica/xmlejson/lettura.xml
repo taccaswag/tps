@@ -1,1 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListaNera>
+    <vittima genere="M">
+        <nome>Mario</nome>
+        <Cognome>Rossi</Cognome>
+        <citta>Carlo</citta>
+        <indirizzo>Via Roma 12</indirizzo>
+        <eta>72</eta>
+        <GSanguigno>A+</GSanguigno>
+    </vittima>
 
+    <vittima genere="F">
+        <nome>Maria</nome>
+        <Cognome>Rossi</Cognome>
+        <citta>Monte Carlo</citta>
+        <indirizzo>Via Roma 12</indirizzo>
+        <eta>25</eta>
+        <GSanguigno>AB-</GSanguigno>
+    </vittima>
+
+    <vittima genere="M">
+        <nome>Michael</nome>
+        <Cognome>Dest</Cognome>
+        <citta>Canegrate</citta>
+        <indirizzo>Via Milano 27</indirizzo>
+        <eta>23</eta>
+        <GSanguigno>0+</GSanguigno>
+    </vittima>
+
+    <vittima genere="M">
+        <nome>Mirko</nome>
+        <Cognome>Guarracino</Cognome>
+        <citta>Canegrate</citta>
+        <indirizzo>Viale Europa 19</indirizzo>
+        <eta>17</eta>
+        <GSanguigno>AB-</GSanguigno>
+    </vittima>
+</ListaNera>
