@@ -1,0 +1,50 @@
+[
+  {
+  "nome": "Marco",
+  "cognome":"Rossi",
+  "citta": "Anzio",
+  "indirizzo": "Via Garibaldi 5",
+  "cap": "00042",
+  "età": 7
+},
+{
+  "nome": "Giovanni",
+  "cognome":"Muciacia",
+  "citta": "Treviglio",
+  "indirizzo": "Via Matteotti 2",
+  "cap": "24047",
+  "età": 26
+  },
+  {
+  "nome": "Alberto",
+  "cognome":"Giovannetti",
+  "citta": "Sassuolo",
+  "indirizzo": "Via Battisti 69",
+  "cap": "41049",
+  "età": 96
+  },
+  {
+  "nome": "Federica",
+  "cognome":"Floriano",
+  "citta": "Ladispoli",
+  "indirizzo": "Via San Vittore 1",
+  "cap": "00055",
+  "età": 17
+  },
+  {
+  "nome": "Mattia",
+  "cognome":"Alfieri",
+  "citta": "Ancona",
+  "indirizzo": "Via XV Settembre 15",
+  "cap": "60100",
+  "età": 29
+  },
+  {
+  "nome": "Alessandro",
+  "cognome":"Meloni",
+  "citta": "Iglesias",
+  "indirizzo": "Via Mori 3",
+  "cap": "09016",
+  "età": 25
+  }
+]
