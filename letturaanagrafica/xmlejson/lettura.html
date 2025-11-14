@@ -9,7 +9,7 @@
         //funzione per caricare il JSON
         function caricaDatiJ() {
             const richiesta = new XMLHttpRequest()
-            richiesta.open("GET", "https://https://taccaswag.github.io/tps/letturaanagrafica/xmlejson/lettura.json", true)
+            richiesta.open("GET", "https://taccaswag.github.io/tps/letturaanagrafica/xmlejson/lettura.json", true)
             richiesta.send()
 
             richiesta.onload = function () {
@@ -25,7 +25,7 @@
                 myFunction(this);//manda la richiesta come argomento
                 }
                 };
-                richiesta.open("GET", "https://https://taccaswag.github.io/tps/letturaanagrafica/xmlejson/lettura.xml", true);
+                richiesta.open("GET", "https://taccaswag.github.io/tps/letturaanagrafica/xmlejson/lettura.xml", true);
                 richiesta.send();
                 function myFunction(file) { //si occupa di fare qualcosa col file una volta caricato
                     filehttp = file.responseXML;
