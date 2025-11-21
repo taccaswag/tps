@@ -6,8 +6,8 @@
         <Cognome>Bianchi</Cognome>
         <citta>Roma</citta>
         <indirizzo>Via Appia 45</indirizzo>
+        <cap>00179</cap>
         <eta>34</eta>
-        <GSanguigno>0+</GSanguigno>
     </persona>
 
     <persona genere="F">
@@ -15,8 +15,8 @@
         <Cognome>Conti</Cognome>
         <citta>Milano</citta>
         <indirizzo>Corso Sempione 12</indirizzo>
+        <cap>20145</cap>
         <eta>28</eta>
-        <GSanguigno>A-</GSanguigno>
     </persona>
 
     <persona genere="M">
@@ -24,8 +24,8 @@
         <Cognome>Moretti</Cognome>
         <citta>Torino</citta>
         <indirizzo>Via Po 7</indirizzo>
+        <cap>10124</cap>
         <eta>42</eta>
-        <GSanguigno>B+</GSanguigno>
     </persona>
 
     <persona genere="F">
@@ -33,8 +33,8 @@
         <Cognome>Ferrari</Cognome>
         <citta>Firenze</citta>
         <indirizzo>Via Roma 3</indirizzo>
+        <cap>50123</cap>
         <eta>19</eta>
-        <GSanguigno>AB+</GSanguigno>
     </persona>
 
     <persona genere="M">
@@ -42,8 +42,8 @@
         <Cognome>Serra</Cognome>
         <citta>Napoli</citta>
         <indirizzo>Viale Kennedy 21</indirizzo>
+        <cap>80143</cap>
         <eta>30</eta>
-        <GSanguigno>0-</GSanguigno>
     </persona>
 
     <persona genere="F">
@@ -51,8 +51,8 @@
         <Cognome>Romano</Cognome>
         <citta>Bologna</citta>
         <indirizzo>Via Indipendenza 88</indirizzo>
+        <cap>40121</cap>
         <eta>24</eta>
-        <GSanguigno>A+</GSanguigno>
     </persona>
 
 </lettura>
