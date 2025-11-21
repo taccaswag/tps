@@ -1,16 +1,37 @@
 [
   {
-  "nome": "Stefano",
-  "cognome":"Re",
-  "citta": "Parabiago",
-  "indirizzo": "Via Roma 1",
-  "cap": "20015"
-},
-{
-  "nome": "Trevor",
-  "cognome":"LaProvince",
-  "citta": "Rho",
-  "indirizzo": "Stazione di Rho",
-  "cap": "20017"
+    "nome": "Luca",
+    "cognome": "Rinaldi",
+    "citta": "Roma",
+    "indirizzo": "Via delle Rose 12",
+    "cap": "00184"
+  },
+  {
+    "nome": "Sara",
+    "cognome": "Bellini",
+    "citta": "Milano",
+    "indirizzo": "Via dei Tigli 7",
+    "cap": "20121"
+  },
+  {
+    "nome": "Enrico",
+    "cognome": "Vassalli",
+    "citta": "Firenze",
+    "indirizzo": "Piazza Roma 22",
+    "cap": "50122"
+  },
+  {
+    "nome": "Irene",
+    "cognome": "Moretti",
+    "citta": "Torino",
+    "indirizzo": "Via del Mare 5",
+    "cap": "10121"
+  },
+  {
+    "nome": "Davide",
+    "cognome": "Conti",
+    "citta": "Napoli",
+    "indirizzo": "Viale della Libertà 18",
+    "cap": "80132"
   }
 ]
