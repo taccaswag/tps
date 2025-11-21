@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ListaNera>
+<lettura>
     <vittima genere="M">
         <nome>Mario</nome>
         <Cognome>Rossi</Cognome>
@@ -35,4 +35,4 @@
         <eta>17</eta>
         <GSanguigno>AB-</GSanguigno>
     </vittima>
-</ListaNera>
+</lettura>
