@@ -147,10 +147,14 @@
 <body onload="caricaDati()">
 
     <h1>Lettura Dati XML e JSON</h1>
+    
    <p id="output">  </p>
    <p id="outputX"> </p>
     <input type="button" value="visualizza JSON" onclick="lettura()">
     <input type="button" value="visualizza XML" onclick="letturaX()">
+
+<br>
+    
     <label for="ricerca">inserisci la lettera dei cognomi da cercare</label>
     <select id="ricerca" name="ricerca">
      <option value="A">A</option>
@@ -180,6 +184,7 @@
      <option value="Y">Y</option>
      <option value="Z">Z</option>
   </select>
+    
   <input type="button" value="Ricerca Cognomi JSON" onclick="ricerca()">
   <p id="outputC"> </p>
 
