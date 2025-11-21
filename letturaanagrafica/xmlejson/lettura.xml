@@ -1,38 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lettura>
-    <vittima genere="M">
-        <nome>Mario</nome>
-        <Cognome>Rossi</Cognome>
-        <citta>Carlo</citta>
-        <indirizzo>Via Roma 12</indirizzo>
-        <eta>72</eta>
-        <GSanguigno>A+</GSanguigno>
-    </vittima>
 
-    <vittima genere="F">
-        <nome>Maria</nome>
-        <Cognome>Rossi</Cognome>
-        <citta>Monte Carlo</citta>
-        <indirizzo>Via Roma 12</indirizzo>
-        <eta>25</eta>
-        <GSanguigno>AB-</GSanguigno>
-    </vittima>
-
-    <vittima genere="M">
-        <nome>Michael</nome>
-        <Cognome>Dest</Cognome>
-        <citta>Canegrate</citta>
-        <indirizzo>Via Milano 27</indirizzo>
-        <eta>23</eta>
+    <persona genere="M">
+        <nome>Luca</nome>
+        <Cognome>Bianchi</Cognome>
+        <citta>Roma</citta>
+        <indirizzo>Via Appia 45</indirizzo>
+        <eta>34</eta>
         <GSanguigno>0+</GSanguigno>
-    </vittima>
+    </persona>
 
-    <vittima genere="M">
-        <nome>Mirko</nome>
-        <Cognome>Guarracino</Cognome>
-        <citta>Canegrate</citta>
-        <indirizzo>Viale Europa 19</indirizzo>
-        <eta>17</eta>
-        <GSanguigno>AB-</GSanguigno>
-    </vittima>
+    <persona genere="F">
+        <nome>Sara</nome>
+        <Cognome>Conti</Cognome>
+        <citta>Milano</citta>
+        <indirizzo>Corso Sempione 12</indirizzo>
+        <eta>28</eta>
+        <GSanguigno>A-</GSanguigno>
+    </persona>
+
+    <persona genere="M">
+        <nome>Giulio</nome>
+        <Cognome>Moretti</Cognome>
+        <citta>Torino</citta>
+        <indirizzo>Via Po 7</indirizzo>
+        <eta>42</eta>
+        <GSanguigno>B+</GSanguigno>
+    </persona>
+
+    <persona genere="F">
+        <nome>Elena</nome>
+        <Cognome>Ferrari</Cognome>
+        <citta>Firenze</citta>
+        <indirizzo>Via Roma 3</indirizzo>
+        <eta>19</eta>
+        <GSanguigno>AB+</GSanguigno>
+    </persona>
+
+    <persona genere="M">
+        <nome>Davide</nome>
+        <Cognome>Serra</Cognome>
+        <citta>Napoli</citta>
+        <indirizzo>Viale Kennedy 21</indirizzo>
+        <eta>30</eta>
+        <GSanguigno>0-</GSanguigno>
+    </persona>
+
+    <persona genere="F">
+        <nome>Martina</nome>
+        <Cognome>Romano</Cognome>
+        <citta>Bologna</citta>
+        <indirizzo>Via Indipendenza 88</indirizzo>
+        <eta>24</eta>
+        <GSanguigno>A+</GSanguigno>
+    </persona>
+
 </lettura>
