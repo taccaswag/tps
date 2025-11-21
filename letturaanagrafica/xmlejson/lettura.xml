@@ -7,7 +7,7 @@
         <citta>Roma</citta>
         <indirizzo>Via Appia 45</indirizzo>
         <cap>00179</cap>
-        <eta>34</eta>
+        <eta>17</eta>
     </persona>
 
     <persona genere="F">
@@ -25,7 +25,7 @@
         <citta>Torino</citta>
         <indirizzo>Via Po 7</indirizzo>
         <cap>10124</cap>
-        <eta>42</eta>
+        <eta>14</eta>
     </persona>
 
     <persona genere="F">
@@ -44,15 +44,6 @@
         <indirizzo>Viale Kennedy 21</indirizzo>
         <cap>80143</cap>
         <eta>30</eta>
-    </persona>
-
-    <persona genere="F">
-        <nome>Martina</nome>
-        <Cognome>Romano</Cognome>
-        <citta>Bologna</citta>
-        <indirizzo>Via Indipendenza 88</indirizzo>
-        <cap>40121</cap>
-        <eta>24</eta>
     </persona>
 
 </lettura>
