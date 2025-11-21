@@ -34,8 +34,8 @@
         }
         //creazione tabellaXML
         function letturaX(){
-            let vittime= filehttp.documentElement.children //trova tutti i "vittima"
-            let campi= vittime[0].children; //campi intestazione
+            let persone= filehttp.documentElement.children //trova tutti i "vittima"
+            let campi= persone[0].children; //campi intestazione
             let tabella=document.createElement("table")
             //creazione intestazione tabella
             let intestazioneRow=document.createElement("tr")
@@ -46,10 +46,10 @@
             }
             tabella.appendChild(intestazioneRow)
 
-            //righe vittime
-            for(let i=0; i<vittime.length; i++){
+            //righe persone
+            for(let i=0; i<persone.length; i++){
                 let riga= document.createElement("tr")
-                let dati = vittime[i].children //prende i dati dentro ogni vittima
+                let dati = persone[i].children //prende i dati dentro ogni vittima
                 for(let j=0; j<dati.length; j++){ //scorre tutti i campi della vittima
                     let intestazione = document.createElement("td")
                     intestazione.textContent = dati[j].textContent //contenuto dei campi di vittima
