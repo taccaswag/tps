@@ -20,12 +20,13 @@
             const richiesta = new XMLHttpRequest(); 
             richiesta.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    myFunction(this);
+                    assegnazione(this);
                 }
             };
             richiesta.open("GET", "https://taccaswag.github.io/tps/letturaanagrafica/xmlejson/lettura.xml", true);
             richiesta.send();
-            function myFunction(file) {
+            
+            function assegnazione(file) {
                 filehttp = file.responseXML;
                 console.log(filehttp)
             }
