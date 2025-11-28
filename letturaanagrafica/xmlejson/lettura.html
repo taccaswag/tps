@@ -2,11 +2,10 @@
 <html>
 <head>
     <script>
-        let parseJSON= [] //variabile salvata in globale per essere utilizzata anche nelle altre funzioni
+        let parseJSON = []
 
         let filehttp 
 
-        //funzione per caricare il JSON
         function caricaDatiJ() {
             const richiesta = new XMLHttpRequest()
             richiesta.open("GET", "https://taccaswag.github.io/tps/letturaanagrafica/xmlejson/lettura.json", true)
@@ -14,45 +13,42 @@
 
             richiesta.onload = function () {
                 parseJSON = JSON.parse(richiesta.responseText);
-                //console.log(parseJSON)
             }
         }
-        //funzione per caricare l'XML
-        function caricaDatiX(){
-            const richiesta= new XMLHttpRequest(); 
+
+        function caricaDatiX() {
+            const richiesta = new XMLHttpRequest(); 
             richiesta.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) { //se lo stato della richiesta==4 la risposta è stata ricevuta ed è pronta, status==200 la richiesta è andata a buon fine
-                myFunction(this);//manda la richiesta come argomento
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
                 }
-                };
-                richiesta.open("GET", "https://taccaswag.github.io/tps/letturaanagrafica/xmlejson/lettura.xml", true);
-                richiesta.send();
-                function myFunction(file) { //si occupa di fare qualcosa col file una volta caricato
-                    filehttp = file.responseXML;
-                    console.log(filehttp)
-                }
+            };
+            richiesta.open("GET", "https://taccaswag.github.io/tps/letturaanagrafica/xmlejson/lettura.xml", true);
+            richiesta.send();
+            function myFunction(file) {
+                filehttp = file.responseXML;
+                console.log(filehttp)
+            }
         }
-        //creazione tabellaXML
-        function letturaX(){
-            let persone= filehttp.documentElement.children //trova tutti i "vittima"
-            let campi= persone[0].children; //campi intestazione
-            let tabella=document.createElement("table")
-            //creazione intestazione tabella
-            let intestazioneRow=document.createElement("tr")
-            for(let i=0; i<campi.length; i++){
-                let intestazione=document.createElement("th")
-                intestazione.textContent = campi[i].tagName //prende i tag di vittima
+
+        function letturaX() {
+            let persone = filehttp.documentElement.children
+            let campi = persone[0].children;
+            let tabella = document.createElement("table")
+            let intestazioneRow = document.createElement("tr")
+            for (let i = 0; i < campi.length; i++) {
+                let intestazione = document.createElement("th")
+                intestazione.textContent = campi[i].tagName
                 intestazioneRow.appendChild(intestazione)
             }
             tabella.appendChild(intestazioneRow)
 
-            //righe persone
-            for(let i=0; i<persone.length; i++){
-                let riga= document.createElement("tr")
-                let dati = persone[i].children //prende i dati dentro ogni vittima
-                for(let j=0; j<dati.length; j++){ //scorre tutti i campi della vittima
+            for (let i = 0; i < persone.length; i++) {
+                let riga = document.createElement("tr")
+                let dati = persone[i].children
+                for (let j = 0; j < dati.length; j++) {
                     let intestazione = document.createElement("td")
-                    intestazione.textContent = dati[j].textContent //contenuto dei campi di vittima
+                    intestazione.textContent = dati[j].textContent
                     riga.appendChild(intestazione)
                 }
                 tabella.appendChild(riga)
@@ -60,89 +56,81 @@
             document.getElementById("outputX").appendChild(tabella)
         }
 
-        function lettura(){
-                //creazione tabella
-                let tabella= document.createElement("table")
+        function lettura() {
+            let tabella = document.createElement("table")
 
-                const chiavi=Object.keys(parseJSON[0])//chiavi del primo oggetto del file JSON per fare l'intestazione
+            const chiavi = Object.keys(parseJSON[0])
                 
-                //creazione della prima riga di intestazione con le chiavi e appensione di essa alla tabella
-                let intestazioneRow=document.createElement("tr")
-                for(let i=0; i<chiavi.length; i++){
-                    let intestazione=document.createElement("th");
-                    intestazione.textContent= chiavi[i];
-                    intestazioneRow.appendChild(intestazione)  
-                }
-                tabella.appendChild(intestazioneRow)
-
-                //creazione contenuto tabella
-                
-                for(let i=0; i<parseJSON.length ;i++){
-                    let righe= document.createElement("tr");
-                    for(let j=0; j<chiavi.length; j++ ){
-                        let colonne= document.createElement("td")
-                        colonne.textContent = colonne.textContent = parseJSON[i][chiavi[j]] //prende valore della chiave al posto "j" dell'oggetto "i"
-                        righe.appendChild(colonne)
-                    }
-                tabella.appendChild(righe)
-                }   
-                let output= document.getElementById("output")
-                output.appendChild(tabella);
-     }
-    
-
-    function maggiorenni(){ 
-        console.log(parseJSON)
-                let maggiorenni="" 
-                for(let i=0;i<parseJSON.length; i++){
-                    if(parseJSON[i]["età"]>18){
-                        maggiorenni += parseJSON[i]["cognome"] + " " + parseJSON[i]["età"] + "<br>"
-                    }
-
-                }
-                let output=document.getElementById("outputM").innerHTML = maggiorenni
+            let intestazioneRow = document.createElement("tr")
+            for (let i = 0; i < chiavi.length; i++) {
+                let intestazione = document.createElement("th");
+                intestazione.textContent = chiavi[i];
+                intestazioneRow.appendChild(intestazione)  
             }
+            tabella.appendChild(intestazioneRow)
 
-    function ricerca(){
-        let lettera=document.getElementById("ricerca").value
-        let cognomi="I cognomi che iniziano con " + lettera + " sono: "
-        for (let i = 0; i < parseJSON.length; i++) {
-            if(parseJSON[i]["cognome"].startsWith(lettera)) //il metodo startsWith restituisce true o false in base alla variabile a cui si applica il metodo
-            cognomi += parseJSON[i]["cognome"] +"<br>"
+            for (let i = 0; i < parseJSON.length; i++) {
+                let righe = document.createElement("tr");
+                for (let j = 0; j < chiavi.length; j++) {
+                    let colonne = document.createElement("td")
+                    colonne.textContent = parseJSON[i][chiavi[j]]
+                    righe.appendChild(colonne)
+                }
+                tabella.appendChild(righe)
+            }   
+            let output = document.getElementById("output")
+            output.appendChild(tabella);
         }
-        let output=document.getElementById("outputC").innerHTML = cognomi
-    }
 
-    function generazione(){
-        let anno = document.getElementById("eta").value;
-        let generazione = "";
-        if (anno >= 1901 && anno <= 1927) {
-            generazione = "Appartieni alla Greatest Generation (1901-1927)";
-        } else if (anno >= 1928 && anno <= 1945) {
-            generazione = "Appartieni alla Generazione Silenziosa (1928-1945)";
-        } else if (anno >= 1946 && anno <= 1964) {
-            generazione = "Appartieni ai Baby Boomers (1946-1964)";
-        } else if (anno >= 1965 && anno <= 1980) {
-            generazione = "Appartieni alla Generazione X (1965-1980)";
-        } else if (anno >= 1981 && anno <= 1996) {
-            generazione = "Appartieni ai Millenials (1981-1996)";
-        } else if (anno >= 1997 && anno <= 2012) {
-            generazione = "Appartieni alla Generazione Z (1997-2012)";
-        } else if (anno >= 2013) {
-            generazione = "Appartieni alla Generazione Alpha (dal 2013 in poi)";
-        } else {
-            generazione = "Anno di nascita non valido";
+        function maggiorenni() { 
+            let maggiorenni = "" 
+            for (let i = 0; i < parseJSON.length; i++) {
+                if (parseJSON[i]["età"] > 18) {
+                    maggiorenni += parseJSON[i]["cognome"] + " " + parseJSON[i]["età"] + "<br>"
+                }
+            }
+            let output = document.getElementById("outputM").innerHTML = maggiorenni
         }
-            let output=document.getElementById("outputG").innerHTML = generazione
-    }
-    function caricaDati(){
-        caricaDatiX()
-        caricaDatiJ()
-    }
+
+        function ricerca() {
+            let lettera = document.getElementById("ricerca").value
+            let cognomi = "I cognomi che iniziano con " + lettera + " sono: "
+            for (let i = 0; i < parseJSON.length; i++) {
+                if (parseJSON[i]["cognome"].startsWith(lettera))
+                    cognomi += parseJSON[i]["cognome"] +"<br>"
+            }
+            let output = document.getElementById("outputC").innerHTML = cognomi
+        }
+
+        function generazione() {
+            let anno = document.getElementById("eta").value;
+            let generazione = "";
+            if (anno >= 1901 && anno <= 1927) {
+                generazione = "Appartieni alla Greatest Generation (1901-1927)";
+            } else if (anno >= 1928 && anno <= 1945) {
+                generazione = "Appartieni alla Generazione Silenziosa (1928-1945)";
+            } else if (anno >= 1946 && anno <= 1964) {
+                generazione = "Appartieni ai Baby Boomers (1946-1964)";
+            } else if (anno >= 1965 && anno <= 1980) {
+                generazione = "Appartieni alla Generazione X (1965-1980)";
+            } else if (anno >= 1981 && anno <= 1996) {
+                generazione = "Appartieni ai Millenials (1981-1996)";
+            } else if (anno >= 1997 && anno <= 2012) {
+                generazione = "Appartieni alla Generazione Z (1997-2012)";
+            } else if (anno >= 2013) {
+                generazione = "Appartieni alla Generazione Alpha (dal 2013 in poi)";
+            } else {
+                generazione = "Anno di nascita non valido";
+            }
+            let output = document.getElementById("outputG").innerHTML = generazione
+        }
+
+        function caricaDati() {
+            caricaDatiX()
+            caricaDatiJ()
+        }
     </script>
-    
 </head>
-
 
 <body onload="caricaDati()">
 
@@ -198,7 +186,3 @@
 </body>
 
 </html>
-
-
-
-
