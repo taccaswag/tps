@@ -48,7 +48,7 @@
      <service name = "conversioneServizio">
         <documentation>Server</documentation>
         <port binding = "tns:conversioneBinding" name = "conversionePorta">
-            <soap:address location = "http://127.0.0.1/soap/server2/server2.php/" /> 
+            <soap:address location = "http://127.0.0.1/SOAP/server/serverPHP.php/" /> 
         </port>
         <!--soap:address location indirizza al server-->
     </service>
