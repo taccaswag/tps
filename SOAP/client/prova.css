@@ -1,0 +1,47 @@
+/* Centra il contenuto verticalmente e orizzontalmente*/
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9db8f0;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+body, h1, h2 {
+  padding: 10px;
+  font-size: 32px;
+  color: #065f46; 
+  text-align: center;
+}
+p{
+  padding: 10px;
+  font-size: 20px;
+  color: #065f46; 
+  text-align: center;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  margin: 20px auto;
+  background-color: #10b981; 
+  color: white;
+  border: none;
+  font-size: 16px;
+}
+input[type="number"], select {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+form {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    text-align: center;
+}
