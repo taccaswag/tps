@@ -21,14 +21,14 @@
 
 
 <?php
-    $wsdl_url = "http://127.0.0.1/soap/server2/prova.wsdl";
+    $wsdl_url = "http://127.0.0.1/SOAP/server/prova.wsdl";
 
     if (isset($_POST['lunghezza']) && !empty($_POST['lunghezza']) && isset($_POST['scala']) && !empty($_POST['scala'])) { //controllo che i campi da inserire non siano vuoti
     try{ //controllo errori in caso la connessione fallisca
         $lunghezza=$_POST['lunghezza'];
         $scala=$_POST['scala'];
 
-        $client = new SoapClient($wsdl_url,["location" =>"http://127.0.0.1/soap/server2/server2.php"]); // creazione client soap e indicazione di dove sia il server
+        $client = new SoapClient($wsdl_url,["location" =>"http://127.0.0.1/SOAP/server/serverphp.php"]); // creazione client soap e indicazione di dove sia il server
 
         $risposta = $client->conversione($lunghezza, $scala); //chiama il metodo soap conversione e il server restituirà il valore salvandolo in risposta 
 
