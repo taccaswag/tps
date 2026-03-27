@@ -1,0 +1,6 @@
+<conversioni>
+    <conversione from="pollici" to="cmetri" factor="2.54"></conversione>  <!-- utilizzi "conversione" perchè nel file php server li iteri -->
+    <conversione from="cmetri" to="pollici" factor="0.393701"></conversione>  <!-- attributo "to" aggiunto in caso si aggiungessero altre unità di misura -->
+</conversioni>
+
+
